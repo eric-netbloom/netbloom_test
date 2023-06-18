@@ -17,17 +17,17 @@ export default function ChecklistForm() {
   
   return (
     <div className='form-fields checklistform'>
-        <form onSubmit={submitHandler} name='checklist'>
+        <form  name='checklist'>
           <input type="hidden" name="form-name" value="checklist" />
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={12} xs={12}  className="input_group">
               <FormControl fullWidth>
-                <TextField type="text" required onChange={(e) => setFname(e.target.value)}  className="form-control" id="Name" label="Name"  aria-describedby="name" />
+                <TextField type="text" required onChange={(e) => setFname(e.target.value)}  className="form-control" name="name" id="name" label="Name"  aria-describedby="name" />
               </FormControl>
             </Grid>
             <Grid item sm={12} xs={12} className="input_group" >
               <FormControl fullWidth>
-                  <TextField type="email" required onChange={(e) => setEmail(e.target.value)} className="form-control" id="Email" label="Email" aria-describedby="Email" />
+                  <TextField type="email" required onChange={(e) => setEmail(e.target.value)} className="form-control" name="email" label="Email" aria-describedby="Email" />
                 </FormControl>
             </Grid>
             <Grid item xs={12} className="input_group" >

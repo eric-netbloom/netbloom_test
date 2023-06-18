@@ -26,7 +26,7 @@ export default function ContactForm() {
   
   return (
     <div className='form-fields'>
-        <form onSubmit={submitHandler} name='ctaform'>
+        <form name='ctaform'>
         <input type="hidden" name="form-name" value="ctaform" />
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={6} xs={12}  className="input_group">
@@ -36,17 +36,17 @@ export default function ContactForm() {
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
               <FormControl fullWidth>
-                  <TextField type="email" required onChange={(e) => setEmail(e.target.value)} className="form-control"  id="Email" name="Email" label="Email" aria-describedby="Email" />
+                  <TextField type="email" required onChange={(e) => setEmail(e.target.value)} className="form-control"  id="Email" name="email" label="Email" aria-describedby="Email" />
                 </FormControl>
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
               <FormControl fullWidth>
-                <TextField type="text" required onChange={(e) => setCompany(e.target.value)} className="form-control" id="Company"  name="Company" label='Company' aria-describedby="Company" />
+                <TextField type="text" required onChange={(e) => setCompany(e.target.value)} className="form-control" id="Company"  name="company" label='Company' aria-describedby="Company" />
               </FormControl>
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
               <FormControl fullWidth>
-                <TextField type="text" required  onChange={(e) => setPhoneNumber(e.target.value)} className="form-control"  id="Phonenumber" name="Phonenumber" label='Phone Number' aria-describedby="Phonenumber" />
+                <TextField type="text" required  onChange={(e) => setPhoneNumber(e.target.value)} className="form-control"  id="Phonenumber" name="phonenumber" label='Phone Number' aria-describedby="Phonenumber" />
               </FormControl>
             </Grid>
             <Grid item xs={12} className="input_group" >
