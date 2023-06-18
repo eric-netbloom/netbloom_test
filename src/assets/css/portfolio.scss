@@ -1,0 +1,46 @@
+@import "./style.scss";
+
+.portfolio-section{
+    max-width: 1600px;
+    margin: 0 auto;
+
+    h1{
+        margin: 20px 0 10px 0;
+        font-size: 40px;
+    }
+    .MuiGrid-item {
+        justify-content: center;
+    }
+    
+    ul.categories li {
+        border-right: 1px solid #333;
+        padding-right: 10px;
+        line-height: 1;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    ul.categories li:last-child {
+        border: none;
+    }
+    
+    .portfolio .details h1 {
+        padding: 20px 0;
+        font-size: 34px!important;
+        font-weight: 600;
+    }
+    
+    .portfolio-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .portfolio-item img {
+        width: 54%;
+        margin-right: 4%;
+    }
+}
+
+

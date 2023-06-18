@@ -1,0 +1,131 @@
+@import "./style.scss";
+
+.banner-location {
+    .banner-overlay{
+        background: linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0.8) 97.4%);
+
+        .banner-con {
+            display: flex;
+            max-width: 100%;
+            padding: 0;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .left{
+                width: 50%;
+                padding-right: 40px;
+                h1, p{
+                    text-align: left;
+                    color: #fff;
+                }
+            }
+
+            .right{
+                width: 50%;
+
+                .form-fields{
+                    padding: 40px;
+                }
+                
+                .contact_form_wp{   
+                    padding: 0;
+                }
+
+                .boxtringle {
+                    background: rgba(255, 255, 255, 0.8);
+                    padding: 30px 30px 20px 30px !important;
+                    backdrop-filter: blur(10px);
+                }
+
+                h3{
+                    display: none;
+                }
+
+                h5 {
+                    margin: 0;
+                    text-align: center;
+                }
+                .btn{
+                    margin: 0!important;
+                }
+            }
+        }
+    }
+}
+
+.casestudy {
+    overflow: hidden;
+    .default-sec-wrap {
+        padding: 0 50px;
+
+        h2 {
+            margin: 20px 0;
+        }
+    }
+}
+
+.features{
+    .features_box_inner{
+        padding: 40px 50px 20px 50px;
+        border-radius: 20px;
+        transition: .3s;
+        height: 100%;
+    }
+    .features_box_inner:hover{
+        background: $NewBlue;
+    }
+    img{
+        max-height: 50px;
+        margin-bottom: 20px;
+    }
+    h3{
+        font-size: 20px;
+    }
+}
+
+.factors{
+    .factors_box_inner{
+        background: #fff;
+        padding: 50px 50px 30px 50px;
+        border-radius: 20px;
+        height: 100%;
+        transition: .3s;
+        h3{
+            font-size: 22px;
+            color: $NewDarkBlue;
+        }
+    }
+    .factors_box_inner:hover{
+        background: $NewDarkBlue;
+        h3{
+            color: $Green;
+        }
+        p{
+            color: #fff;
+        }
+    }
+    
+}
+
+.about{
+    .left-con{
+        iframe{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .right-con{
+        padding: 80px;
+        h2, p{
+            color: #fff;
+        }
+        h3, h4, h5, h6{
+            color: #fff;
+            margin-top: 30px;
+        }
+        ul {
+            list-style-type: disc;
+            padding: 15px 0 0 30px;
+        }
+    }
+}
