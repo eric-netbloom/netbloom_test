@@ -37,7 +37,7 @@ const App = () => {
   }, []);
 
   document.body.classList.add("page");
-  console.log = console.warn = console.error = () => {};
+  // console.log = console.warn = console.error = () => {};
   return (
     <div className="App">
       <Helmet
