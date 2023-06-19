@@ -37,7 +37,7 @@ export default function ContactForm() {
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={6} xs={12}  className="input_group">
               <FormControl fullWidth>
-                <TextField type="text"   required   className="form-control" id="first_name" name="first_name" label="First Name"  aria-describedby="first_name" />
+                <TextField type="text"   required   className="form-control" id="first_name" name="firstname" label="First Name"  aria-describedby="first_name" />
               </FormControl>
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
@@ -60,7 +60,7 @@ export default function ContactForm() {
                 <InputLabel>Services Your Are Interested In</InputLabel>
                   <Select
                     required
-                    name="demo-simple-select"
+                    name="service"
                     id="demo-simple-select"
                     
                     label="Services Your Are Interested In"
