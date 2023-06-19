@@ -1,23 +1,36 @@
 import {React, useState } from 'react';
-import { Grid, TextField, FormControl } from '@mui/material';
+import { Grid, TextField, FormControl, Alert } from '@mui/material';
 import axios from "axios";
 import "../assets/css/ctaform.scss";
 export default function ChecklistForm() {
 
-  const [fname, setFname] = useState("");
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState("");
+  const [alert, setAlert] = useState(false);
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post(`/api/email`, {
-      fname,
-      email,
-    });
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+        setAlert(true);
+        document.getElementById('contact-form').reset()
+      }
+      )
+      .catch((error) => alert(error));
+
   };
   
   return (
     <div className='form-fields checklistform'>
-        <form  name='checklist'>
+       {alert ? <Alert onClose={() => {}} icon={<CheckCircleOutlineIcon  fontSize="inherit" />} severity="success">
+           Thank you for your Enquiry we will get back with you as soon as possible
+        </Alert> : <></>}
+        <form method='POST'  name='checklist' id="contact-form" onSubmit={submitHandler}>
           <input type="hidden" name="form-name" value="checklist" />
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={12} xs={12}  className="input_group">

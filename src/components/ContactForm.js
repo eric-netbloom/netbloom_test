@@ -1,32 +1,37 @@
 import {React, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Grid, TextField, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
+import { Grid, TextField, Select, MenuItem, InputLabel, FormControl, Alert } from '@mui/material';
 import axios from "axios";
 import "../assets/css/ctaform.scss";
 export default function ContactForm() {
 
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [company, setCompany] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState("");
+  const [alert, setAlert] = useState(false);
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post(`/api/email`, {
-      firstName,
-      email,
-      subject,
-      company,
-      phoneNumber,
-      message,
-    });
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+        setAlert(true);
+        document.getElementById('contact-form').reset()
+      }
+      )
+      .catch((error) => alert(error));
+
   };
   
   return (
     <div className='form-fields'>
-        <form name='ctaform'>
+       {alert ? <Alert onClose={() => {}} icon={<CheckCircleOutlineIcon  fontSize="inherit" />} severity="success">
+           Thank you for your Enquiry we will get back with you as soon as possible
+        </Alert> : <></>}
+        <form name='ctaform' method='POST'  id="contact-form" onSubmit={submitHandler}>
         <input type="hidden" name="form-name" value="ctaform" />
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={6} xs={12}  className="input_group">
