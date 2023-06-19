@@ -1,6 +1,7 @@
 import {React, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Grid, TextField, Select, MenuItem, InputLabel, FormControl, Alert } from '@mui/material';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import axios from "axios";
 import "../assets/css/ctaform.scss";
 export default function ContactForm() {
@@ -36,22 +37,22 @@ export default function ContactForm() {
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={6} xs={12}  className="input_group">
               <FormControl fullWidth>
-                <TextField type="text"   required onChange={(e) => setFirstName(e.target.value)}  className="form-control" id="first_name" name="first_name" label="First Name"  aria-describedby="first_name" />
+                <TextField type="text"   required   className="form-control" id="first_name" name="first_name" label="First Name"  aria-describedby="first_name" />
               </FormControl>
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
               <FormControl fullWidth>
-                  <TextField type="email" required onChange={(e) => setEmail(e.target.value)} className="form-control"  id="Email" name="email" label="Email" aria-describedby="Email" />
+                  <TextField type="email" required  className="form-control"  id="Email" name="email" label="Email" aria-describedby="Email" />
                 </FormControl>
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
               <FormControl fullWidth>
-                <TextField type="text" required onChange={(e) => setCompany(e.target.value)} className="form-control" id="Company"  name="company" label='Company' aria-describedby="Company" />
+                <TextField type="text" required  className="form-control" id="Company"  name="company" label='Company' aria-describedby="Company" />
               </FormControl>
             </Grid>
             <Grid item sm={6} xs={12} className="input_group" >
               <FormControl fullWidth>
-                <TextField type="text" required  onChange={(e) => setPhoneNumber(e.target.value)} className="form-control"  id="Phonenumber" name="phonenumber" label='Phone Number' aria-describedby="Phonenumber" />
+                <TextField type="text" required   className="form-control"  id="Phonenumber" name="phonenumber" label='Phone Number' aria-describedby="Phonenumber" />
               </FormControl>
             </Grid>
             <Grid item xs={12} className="input_group" >
@@ -61,7 +62,7 @@ export default function ContactForm() {
                     required
                     name="demo-simple-select"
                     id="demo-simple-select"
-                    onChange={(e) => setSubject(e.target.value)}
+                    
                     label="Services Your Are Interested In"
                   >
                     <MenuItem value="Website Design & Development">Website Design & Development</MenuItem>
@@ -74,7 +75,7 @@ export default function ContactForm() {
             </Grid>
             <Grid item xs={12} className="input_group" >
               <FormControl fullWidth>
-                <TextField fullWidth type='text' required onChange={(e) => setMessage(e.target.value)} className='form-control'name='help' id='help' label='How can we help you?' aria-describedby='help' />
+                <TextField fullWidth type='text' required  className='form-control'name='help' id='help' label='How can we help you?' aria-describedby='help' />
               </FormControl>
             </Grid>
             <Grid item xs={12} className="input_group" >

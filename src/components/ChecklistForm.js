@@ -1,5 +1,6 @@
 import {React, useState } from 'react';
 import { Grid, TextField, FormControl, Alert } from '@mui/material';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import axios from "axios";
 import "../assets/css/ctaform.scss";
 export default function ChecklistForm() {
@@ -35,12 +36,12 @@ export default function ChecklistForm() {
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={12} xs={12}  className="input_group">
               <FormControl fullWidth>
-                <TextField type="text" required onChange={(e) => setFname(e.target.value)}  className="form-control" name="name" id="name" label="Name"  aria-describedby="name" />
+                <TextField type="text" required  className="form-control" name="name" id="name" label="Name"  aria-describedby="name" />
               </FormControl>
             </Grid>
             <Grid item sm={12} xs={12} className="input_group" >
               <FormControl fullWidth>
-                  <TextField type="email" required onChange={(e) => setEmail(e.target.value)} className="form-control" name="email" label="Email" aria-describedby="Email" />
+                  <TextField type="email" required  className="form-control" name="email" label="Email" aria-describedby="Email" />
                 </FormControl>
             </Grid>
             <Grid item xs={12} className="input_group" >
