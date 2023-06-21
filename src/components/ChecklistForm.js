@@ -1,6 +1,9 @@
 import {React, useState } from 'react';
 import { Grid, TextField, FormControl, Alert } from '@mui/material';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import IconButton from '@mui/material/IconButton';
+import Collapse from '@mui/material/Collapse';
+import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 import "../assets/css/ctaform.scss";
 export default function ChecklistForm() {
@@ -30,9 +33,26 @@ export default function ChecklistForm() {
   
   return (
     <div className='form-fields checklistform'>
-       {alert ? <Alert onClose={() => {}} icon={<CheckCircleOutlineIcon  fontSize="inherit" />} severity="success">
-           Thank you for your Enquiry we will get back with you as soon as possible
-        </Alert> : <></>}
+      {alert ?   
+        <Collapse in={open}>
+        <Alert
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 }}
+        >
+          Thank you for your Enquiry we will get back with you as soon as possible
+        </Alert>
+      </Collapse>: <></>}
         <form method='POST'  name='checklist' id="contact-form" onSubmit={submitHandler}>
           <input type="hidden" name="form-name" value="checklist" />
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
