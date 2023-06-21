@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 import "../assets/css/ctaform.scss";
 export default function ChecklistForm() {
-
+  const [open, setOpen] = useState(true);
   const [alert, setAlert] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
