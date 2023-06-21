@@ -6,7 +6,8 @@ import "../assets/css/ctaform.scss";
 export default function ChecklistForm() {
 
   const [alert, setAlert] = useState(false);
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -19,7 +20,8 @@ export default function ChecklistForm() {
       })
       .then(() => {
         setAlert(true);
-        document.getElementById('contact-form').reset()
+        setName("");
+        setEmail("");
       }
       )
       .catch((error) => alert(error));
@@ -36,12 +38,12 @@ export default function ChecklistForm() {
           <Grid container rowSpacing={2} columnSpacing={2} className="forminsideinput">
             <Grid item sm={12} xs={12}  className="input_group">
               <FormControl fullWidth>
-                <TextField type="text" required  className="form-control" name="name" id="name" label="Name"  aria-describedby="name" />
+                <TextField type="text"  value={name} onChange={(e) => setName(e.target.value)} required  className="form-control" name="name" id="name" label="Name"  aria-describedby="name" />
               </FormControl>
             </Grid>
             <Grid item sm={12} xs={12} className="input_group" >
               <FormControl fullWidth>
-                  <TextField type="email" required  className="form-control" name="email" label="Email" aria-describedby="Email" />
+                  <TextField type="email"  value={email} onChange={(e) => setEmail(e.target.value)} required  className="form-control" name="email" label="Email" aria-describedby="Email" />
                 </FormControl>
             </Grid>
             <Grid item xs={12} className="input_group" >
